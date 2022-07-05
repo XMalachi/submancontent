@@ -15,23 +15,24 @@
     font-size: 1.6em;
     color: black;
 }
-.header {
+header {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     position: fixed;
     top: 0;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     background-image: url(images/texture1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding:20px;
+    padding: 20px 0;
+    z-index: 200;
 }
 
 .brand h1 {
-    font-size: 2vw;
+    font-size: 1.5em;
 }
 
 .nav > a {
@@ -65,7 +66,6 @@
     background-color: purple;
     color: white;
     font-size: 0.9em;
-    margin-top: 20px;
     padding: 0 16px;
     text-decoration: none;
 }
@@ -260,7 +260,7 @@
     background-color: rgba(211, 211, 211, 0.459);
 }
 .wcuImage {
-    width: 400px;
+    width: 28vw;
     height: 200px;
     margin-left: -40px ;
 }
@@ -365,7 +365,7 @@ p.lhwcu {
 
 
 @media only screen and (max-width: 1200px) {
-    .header>.nav,.header>.contact, .header>.orderContent {
+    header>.nav,header>.contact, header>.orderContent {
         display: none;
     }
 
@@ -382,9 +382,9 @@ p.lhwcu {
     }
     
     .wcuImage {
-        width: 380px;
+        width: 100vw;
         height: 200px;
-        margin-left: -38px ;
+        /* margin-left: -38px ; */
     }
     .wcu {
         width: 300px;
@@ -452,11 +452,11 @@ p.lhwcu {
         font-size: 0.7em;
     }
     
-    .wcuImage {
-        width: 340px;
+    /* .wcuImage {
+        width: 100vw;
         height: 200px;
         margin-left: -38px ;
-    }
+    } */
     .wcu {
         width: 250px;
         margin: 0 20px;
@@ -499,10 +499,10 @@ p.lhwcu {
         flex-wrap: wrap;
     }
 
-    .wcuImage {
+    /* .wcuImage {
         width: 550px;
         height: 300px;
-    }
+    } */
     .wcuFirst>h1,
     .wcuFirst>p,
     .wcuFirst>.learnMore  {
@@ -539,13 +539,20 @@ p.lhwcu {
 }
 
 @media only screen and (max-width: 500px){
-    
+    header {
+        justify-content: space-between;
+    }
+
+    .greeting {
+        max-height: 450px;
+        margin-top: 80px;
+    }
     .greeting > .image {
         width: 100vw;
     }
     .greeting > .whatWeDo {
         position: absolute;
-        top: 185px;
+        top: 90px;
         right: 0;
         width: 50vw;
     }
