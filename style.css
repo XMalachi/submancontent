@@ -17,22 +17,23 @@
 }
 .header {
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
+    position: fixed;
+    top: 0;
+    width: 100%;
     justify-content: space-between;
     background-image: url(images/texture1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 30px 20px 30px;
+    padding:20px;
 }
 
 .brand h1 {
     font-size: 2vw;
 }
 
-.nav, .socials{
-    margin-top: 20px;
-}
 .nav > a {
     text-decoration: none;
     margin-left: 20px;
@@ -73,27 +74,147 @@
     transition: 1s;
 }
 
+.nav-toggler{
+    font-size: 1.3em;
+    cursor: pointer;
+    color: black;
+    background: none;
+    outline: none;
+    border: none;
+    display: none;
+}
+.nav-toggler-close{
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    color: white;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em;
+}
 
+.nav-list-toggled{
+    display: none;
+}
+
+.open{
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.781);
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    right: 0;
+}
+
+.open > *{
+    display: block;
+    text-align: left;
+    color: white;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* animated nav-list-toggled entry */
+.nav-link-toggled{
+    animation-duration: 0.5s;
+    animation-name: animate-fade;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.nav-link-toggled.pop {
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+}
+
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+    }
+            
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+
+.delay-1 {
+    animation-delay: 0.6s;
+}
+    
+.delay-2 {
+    animation-delay: 0.7s;
+}
+    
+.delay-3 {
+    animation-delay: 0.8s;
+}
+.delay-4 {
+    animation-delay: 0.9s;
+}
+.delay-5 {
+    animation-delay: 1s;
+}
+.delay-6 {
+    animation-delay: 1.01s;
+}
+.delay-7 {
+    animation-delay: 1.02s;
+}
+/* animagted nav-list-toggled entry ends */
+
+
+/* greeting starts */
 .greeting {
     display: flex;
     justify-content: center;
+    max-height: 450px;
+    margin-top: 100px;
+}
+.greeting > .image {
+    width: 50vw;
+}
+.greeting > .whatWeDo {
+    width: 50vw;
+}
+
+.greeting > .image{
+    overflow: hidden;
 }
 
 .greeting > .image > img  {
     height: 100%;
     width: 100%;
+    transition: transform .8s ease;
+}
+
+.greeting:hover > .image img{
+    transform: scale(1.1); 
+    z-index: 0;
+
 }
 
 .greeting .whatWeDo {
     padding: 50px 20px;
-    width: 100%;
     font-weight: 700;
     background-color: #e4e2e28f;
-    transition: width 2s;
 }
-.greeting .whatWeDo:hover {
-    width: 102%;
-}
+
 
 .greeting .whatWeDo >  h1 {
     font-size: 2.5em;
@@ -116,6 +237,7 @@
     padding-right: 40px;
     transition: 0.5s;
 }
+/* greeting ends */
 
 /* wcos design */
 
@@ -156,7 +278,6 @@ p.lhwcu {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    padding: 20px;
     color: rgba(58, 56, 56, 0.938);
 }
 .adstexts {
@@ -299,7 +420,9 @@ p.lhwcu {
 }
 
 @media only screen and (max-width: 1000px) {
-    
+    .nav-toggler{
+        display: block;
+    }
 
     .greeting > .whatWeDo {
         padding: 50px 20px ;
@@ -413,4 +536,29 @@ p.lhwcu {
 }
 
    
+}
+
+@media only screen and (max-width: 500px){
+    
+    .greeting > .image {
+        width: 100vw;
+    }
+    .greeting > .whatWeDo {
+        position: absolute;
+        top: 185px;
+        right: 0;
+        width: 50vw;
+    }
+    
+    .greeting > .image > img  {
+        height: 100%;
+        width: 100%;
+        transition: transform .8s ease;
+    }
+    
+    .greeting:hover > .image img{
+        transform: scale(1.1);     
+    }
+    
+  
 }
