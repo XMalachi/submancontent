@@ -28,9 +28,20 @@ header {
     padding: 10px;
     z-index: 200;
 }
-
-.brand h1 {
-    font-size: 1.5em;
+.brand{
+    display: flex;
+    align-items: center;
+}
+.brand h1{
+    font-size: 1em;
+    margin: 0;
+    margin-left: -25px;
+    color: rgba(73, 3, 73, 0.582);
+}
+.logo {
+    height: 80px;
+    width: 70px;
+    margin: 0;
 }
 
 .nav > a {
@@ -349,12 +360,81 @@ p.lhwcu {
     background-size: cover;
     background-attachment: fixed;
     padding: 50px;
+    margin-top: -10px;
 }
 .audience > * {
     width: 70%;
 }
 .audience h1 {
     font-size: 3em;
+}
+
+/* Services */
+.services, .ourTeam{
+    margin-top: 0;
+}
+.servicesTop p, .ourTeam p{
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.servicesTop, .ourTeamTop{
+    background-color: rgba(43, 42, 42, 0.678);
+    margin-top: 0;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.servicesFigs, .ourTeamFigs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -70px;
+}
+
+.servicesFigs > figure, .ourTeamFigs > figure{
+    width: 30%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.servicesFigs figure .img{
+    width: 100%;
+    height: 300px;
+    transition: transform .8s ease;
+}
+.ourTeamFigs figure .img{
+    width: 100%;
+    height: 400px;
+    transition: transform .8s ease;
+}
+
+.servicesFigs figure:hover >  .img{
+    transform: scale(1.1); 
+    z-index: 0;
+}
+.ourTeamFigs figure:hover > .img{
+    transform: scale(1.1); 
+    z-index: 0;
+}
+
+
+/* about us styles */
+.about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4e2e28f;
+    margin-bottom: 0;
+}
+.about .aboutImage{
+    width: 100%;
+}
+.about .aboutImage img{
+    width: 100%;
+}
+.about .abouttexts{
+    padding: 20px;
 }
 
 /* responsiveness */
@@ -377,6 +457,14 @@ p.lhwcu {
         font-size: 0.8em;
     }
     
+    .servicesFigs figure .img{
+        height: 230px;
+    }
+    .ourTeamFigs figure .img{
+        height: 300px;
+    }
+
+    
     
 }
 
@@ -384,12 +472,6 @@ p.lhwcu {
     .greeting {
         height: 350px;
     }
-
-    /* .greeting .whatWeDo {
-        padding: 50px 20px;
-        font-weight: 700;
-        background-color: #e4e2e28f;
-    } */
     
     
     .greeting .whatWeDo >  h1 {
@@ -416,10 +498,14 @@ p.lhwcu {
     .ads{
         flex-direction: column;
     }
-    .adstexts h2{
-        font-size: 2em;
-    }
     
+    .adsImage{
+        width: 100%;
+        text-align: center;
+    }
+    .adsImage img{
+        width: 60%;
+    }
 }
 
 @media only screen and (max-width: 800px){
@@ -441,14 +527,26 @@ p.lhwcu {
     .wcuImage img{
         width: 100%;
     }
-    
+
+    /* Services */
+
+
+.servicesFigs, .ourTeamFigs{
+    flex-direction: column;
+
+}
+
+.servicesFigs > figure, .ourTeamFigs > figure{
+    width: 50%;
+}
+  
 }
 
 
 
 @media only screen and (max-width: 600px){
     .brand h1 {
-        font-size: 1em;
+        font-size: 0.9em;
     }
     .greeting {
         margin-top: 60px;
@@ -475,9 +573,29 @@ p.lhwcu {
     .wcuImage img{
         width: 100%;
     }
-  
+    
+    .adsImage{
+        width: 100%;
+    }
+    .adsImage img{
+        width: 100%;
+    }
+    .adstexts h2{
+        font-size: 2.3em;
+    }
+
     .snrWriter{
         flex-direction: column;
     }
     
+    .audience h1 {
+        font-size: 2em;
+    }
+    .audience > * {
+        width: 100%;
+    }
+    
+    .servicesFigs > figure, .ourTeamFigs > figure{
+        width: 70%;
+    }
 }
