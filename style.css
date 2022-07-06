@@ -2,7 +2,7 @@
     font-family: Rajdhani, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     font-weight: 300;
-    
+    box-sizing: border-box;
 }
 .red {
     color: rgba(255, 0, 0, 0.651);
@@ -12,8 +12,6 @@
 }
 .bold {
     font-weight: 700;
-    font-size: 1.6em;
-    color: black;
 }
 header {
     display: flex;
@@ -22,12 +20,12 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     background-image: url(images/texture1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 20px 0;
+    padding: 10px;
     z-index: 200;
 }
 
@@ -66,7 +64,7 @@ header {
     background-color: purple;
     color: white;
     font-size: 0.9em;
-    padding: 0 16px;
+    padding: 0px 20px;
     text-decoration: none;
 }
 .orderContent a:hover {
@@ -82,10 +80,12 @@ header {
     outline: none;
     border: none;
     display: none;
+    position: relative;
+    right: 30px;
 }
 .nav-toggler-close{
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 20px;
     color: white;
     background: none;
@@ -183,8 +183,8 @@ header {
 .greeting {
     display: flex;
     justify-content: center;
-    max-height: 450px;
-    margin-top: 100px;
+    height: 450px;
+    margin-top: 80px;
 }
 .greeting > .image {
     width: 50vw;
@@ -246,11 +246,16 @@ header {
 .wcu p {
     font-weight: 500;
     color: rgba(58, 56, 56, 0.938);
+    margin: 0;
 }
 .wcu p i {
     font-size: 2.5em;
     padding: 10px;
     color: red;
+}
+.wcu p .bold{
+    font-size: 1.6em;
+    color: black;
 }
 .wcosContainer {
     display: flex;
@@ -270,65 +275,72 @@ header {
 }
 .wcu {
     width: 300px;
-    margin: 0 40px;
-    padding: 60px 30px 30px;
+    margin: 0 30px;
+    padding: 60px 20px 20px;
 }
 p.lhwcu {
     line-height: 0.5em;
 }
 
-/* ads styles */
-.ads {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    color: rgba(58, 56, 56, 0.938);
 
+/* ads  */
+
+.ads{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e4e2e28f;
+    margin-top: 30px;
 }
-.ads > div{
-    width: 50vw;
+
+.adstexts{
+    padding: 30px;
+    margin-right: 20px;
 }
-.adstexts {
-    background-color: rgba(211, 211, 211, 0.459);
-    padding: 40px;
-    width: 50%;
+.adstexts h2{
+    font-size: 2.8em;
 }
-.adstexts > h1 {
-    font-size: 3em;
+.adstexts p{
+    font-size: 1.2em;
+    line-height: 2;
 }
-.adstexts > li {
+.adstexts li{
     list-style-type: none;
-    font-weight: 700;
-    line-height: 1.9;
-    font-size: 1.3em;
+    line-height: 2;
 }
-.adstexts > li i {
+.adstexts li i{
     color: red;
 }
 
-.adstexts .snrWriter {
-    display: inline-block;
-    margin: 5px 50px;
-}
-.adstexts .snrWriter figure {
-    display: flex;
-    font-weight: 700;
-    font-size: 0.7em;
-}
-.adstexts .snrWriter figure figcaption {
-    line-height: 1.5;
-}
-
-.adstexts .snrWriter img {
-    height: 70px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
 .adsImage{
     width: 100%;
 }
-/* audience design */
+.adsImage img{
+    width: 100%;
+}
+.snrWriter{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.snrWriter figure{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+}
+.snrWriter figure img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 
+}
+.snrWriter figcaption{
+    margin-left: 10px;
+}
+
+/* audience styles */
 .audience {
     background-image: linear-gradient( to bottom, rgba(21, 22, 26, 0.185), rgb(15, 10, 10)), url(images/content6.jpg);
     color: white;
@@ -345,249 +357,127 @@ p.lhwcu {
     font-size: 3em;
 }
 
-/* services styles */
-
-.servicesTop {
-    background-color: rgb(48, 44, 44);
-    color: white;
-    text-align: center;
-    padding: 50px;
-    padding-bottom: 100px;
-    margin: -30px 50px 0 ;
-    font-weight: 700;
-}
-
-.servicesFigs {
-    display: flex;
-    justify-content: center;
-    padding: 100px;
-    margin: -200px 100px 0 ;
-}
-.servicesFigs img {
-    width: 300px;
-}
-.servicesFigs h3 {
-    font-size: 0.9em;
-    font-weight: 700;
-}
-
-/* Responsiveness   */
-
-
-@media only screen and (max-width: 1200px) {
+/* responsiveness */
+@media only screen and (max-width: 1200px){
     header>.nav,header>.contact, header>.orderContent {
         display: none;
     }
 
-    .brand h1 {
-        font-size: 4vw;
-    }
-    
-    /* wcu designs */
-    .wcu p i {
-        font-size: 2em;
-    }
-    .wcosContainer {
-        font-size: 0.8em;
-    }
-    
-    
-    .wcu {
-        width: 300px;
-        margin: 0 20px;
-    }
-
-    /* ads styles */  
-    .adstexts > h1 {
-        font-size: 2em;
-    }
-    .adstexts > li {
-        list-style-type: none;
-        font-weight: 700;
-        line-height: 1.9;
-        font-size: 1em;
-    }
-    
-    .adstexts .snrWriter {
-        display: block;
-        margin: 0 5px;
-        margin-top: 50px;
-
-    }
-    
-    .adstexts .snrWriter img {
-        height: 50px;
-        margin-right: 5px;
-        border-radius: 50%;
-    }
-
-    
-
-}
-
-@media only screen and (max-width: 1000px) {
     .nav-toggler{
         display: block;
     }
 
-    .greeting > .whatWeDo {
-        padding: 50px 20px ;
-    }
-    
-    .greeting .whatWeDo >  h1 {
-        font-size: 1.5em;
-        
-    }
-    .greeting .whatWeDo >  p {
-        font-size: 1em;
-        margin-bottom: -10px;
-    }
-
-    .learnMore a {
-        font-size: 0.5em;
-        padding: 5px 10px;
-    }
-    
-
-    
-    /* wcu designs */
     .wcu p i {
-        font-size: 1.8em;
+        font-size: 2em;
     }
-    .wcosContainer {
-        font-size: 0.7em;
+    .wcu p .bold{
+        font-size: 1.3em;
     }
-    
-    /* .wcuImage {
-        width: 100vw;
-        height: 200px;
-        margin-left: -38px ;
-    } */
-    .wcu {
-        width: 250px;
-        margin: 0 20px;
-    }
-
-
-    /* ads styles */
-    .adstexts > h1 {
-        font-size: 1.8em;
-    }
-    .adstexts .snrWriter figure{
-        margin: 0;
+    .wcu p .uppercase{
+        font-size: 0.8em;
     }
     
-    .adstexts .snrWriter img {
-        height: 50px;
-        margin-right: 5px;
-        border-radius: 50%;
-    }
-
-    .adsImage{
-        width: 100%;
-        text-align: center;
-    }
-
-    /* services styles */
-    .servicesFigs {  
-        flex-wrap: wrap;
-    }
-       
+    
 }
 
-@media only screen and (max-width: 800px) {
-    .greeting .whatWeDo >  h1 {
-        font-size: 1em;
-        
-    }
-    .greeting .whatWeDo >  p {
-        font-size: 0.7em;
-    }
-    /* wcu designs */
-    
-    .wcosContainer {
-        font-size: 0.9em;
-        flex-wrap: wrap;
+@media only screen and (max-width: 1000px) {
+    .greeting {
+        height: 350px;
     }
 
+    /* .greeting .whatWeDo {
+        padding: 50px 20px;
+        font-weight: 700;
+        background-color: #e4e2e28f;
+    } */
+    
+    
+    .greeting .whatWeDo >  h1 {
+        font-size: 1.7em;
+    
+    }
+    
+     .learnMore a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.6em;
+        font-weight: 700;
+        background-color: red;
+        padding: 10px;
+        border-radius: 20px;
+       
+    }
+    .learnMore a:hover {
+        background-color: black;
+        letter-spacing: 3px;
+        padding-right: 40px;
+        transition: 0.5s;
+    }
+    .ads{
+        flex-direction: column;
+    }
+    .adstexts h2{
+        font-size: 2em;
+    }
+    
+}
+
+@media only screen and (max-width: 800px){
+    .wcosContainer {
+        flex-direction: column;
+    }
+    
     .wcuFirst{
         width: 100%;
         text-align: center;
+        padding: 60px 0;
     }
     .wcuImage {
-        width: 50vw;
+        width: 70%;
         height: 250px;
         margin-left: 0px ;
     }
-    .wcuFirst>h1,
-    .wcuFirst>p,
-    .wcuFirst>.learnMore  {
-        padding-left: 20px;
+
+    .wcuImage img{
+        width: 100%;
     }
     
-    .wcu {
-        width: 100%;
-        padding: 20px;
-    }
-
-    /* ads styles */
-.ads {
-    padding: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.adstexts {
-    width: 100%;
 }
 
 
-.adstexts .snrWriter figure {
-    font-size: 1em;
-    padding-bottom: 30px;
-}
-
-/* services styles */
-.servicesFigs {  
-    flex-wrap: wrap;
-}
-
-   
-}
 
 @media only screen and (max-width: 600px){
-    header {
-        justify-content: space-between;
+    .brand h1 {
+        font-size: 1em;
     }
-
     .greeting {
-        max-height: 450px;
-        margin-top: 80px;
+        margin-top: 60px;
     }
     .greeting > .image {
         width: 100vw;
     }
     .greeting > .whatWeDo {
         position: absolute;
-        top: 90px;
+        top: 67px;
         right: 0;
-        width: 50vw;
+        width: 50%;
+    }
+    .greeting .whatWeDo >  h1 {
+        font-size: 1.3em;
     }
 
     .wcuImage {
-        width: 100vw;
+        width: 100%;
         height: 250px;
         margin-left: 0px ;
     }
-    
-    .adsImage{
-        width:100%;
-        text-align: center;
-        /* overflow: hidden; */
+
+    .wcuImage img{
+        width: 100%;
     }
-    .adImage img{
-        width: 70%;
-        text-align: center;
-    }
-    
   
+    .snrWriter{
+        flex-direction: column;
+    }
+    
 }
