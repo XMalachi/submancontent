@@ -373,9 +373,12 @@ p.lhwcu {
 .services, .ourTeam{
     margin-top: 0;
 }
-.servicesTop p, .ourTeam p{
+.servicesTop p{
     margin-top: 0;
     font-size: 1.5em;
+}
+.ourTeam p{
+    font-size: 1.1em;
 }
 .servicesTop, .ourTeamTop{
     background-color: rgba(43, 42, 42, 0.678);
@@ -461,7 +464,7 @@ p.lhwcu {
         height: 230px;
     }
     .ourTeamFigs figure .img{
-        height: 300px;
+        height: 360px;
     }
 
     
@@ -506,6 +509,22 @@ p.lhwcu {
     .adsImage img{
         width: 60%;
     }
+
+    /* about us styles */
+    .about{
+        flex-direction: column-reverse;
+    }
+    .about .aboutImage{
+        text-align: center;
+    }
+    .about .aboutImage img{
+        width: 60%;
+    }
+
+    .ourTeamFigs figure .img{
+        height: 300px;
+    }
+    
 }
 
 @media only screen and (max-width: 800px){
@@ -538,6 +557,9 @@ p.lhwcu {
 
 .servicesFigs > figure, .ourTeamFigs > figure{
     width: 50%;
+}
+.ourTeamFigs figure .img{
+    height: 400px;
 }
   
 }
